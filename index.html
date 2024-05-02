@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weeklyn Dry Cleaning - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> <!-- Add JavaScript file -->
+</head>
+<body>
+    <header>
+        <div class="logo animated-logo">
+            <img src="logo.png" alt="Weeklyn Dry Cleaning Logo">
+        </div>
+        <h1 class="animated-title">Weeklyn Dry Cleaning</h1>
+        <p class="animated-subtitle">Your Trusted Cleaning Partner!</p>
+    </header>
+    <nav>
+        <ul class="animated-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services" class="dropdown-toggle">Services</a>
+                <ul class="dropdown-content">
+                    <li><a href="alterations.html">Repairs & Alterations</a></li>
+                    <li><a href="furnishing.html">Furnishing</a></li>
+                    <li><a href="curtains_blinds.html">Curtains & Blinds</a></li>
+                    <li><a href="wedding_dresses.html">Wedding Dresses</a></li>
+                    <li><a href="ski_wear.html">Ski & Sportswear</a></li>
+                    <li><a href="bagwash.html">Bagwash</a></li>
+                    <li><a href="leather_suede.html">Leather & Suede</a></li>
+                    <li><a href="rug_cleaning.html">Rug Cleaning</a></li>
+                    <li><a href="steam_pressing.html">Steam Pressing</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>Weeklyn Dry Cleaning is your trusted local dry cleaner in Turramurra, NSW, Australia. With decades of experience, we offer a range of services to meet your needs, including alterations, dry cleaning, and laundry. Our team is dedicated to providing top-quality service and ensuring that your garments and soft furnishings receive the care they deserve.</p>
+            <p>We specialize in handling delicate fabrics, intricate garments, and special items such as wedding dresses, ski wear, and rugs. Our expertise and dedication to excellence have made us a trusted name in the community. At Weeklyn Dry Cleaning, we understand the value of your clothing and home textiles, and we strive to extend their life and maintain their beauty with every service we offer.</p>
+            <p>Our mission is to provide unparalleled service that surpasses our customers' expectations. We pride ourselves on our attention to detail, state-of-the-art cleaning techniques, and customer-centric approach. Whether you need alterations, deep cleaning, or pressing, you can count on Weeklyn Dry Cleaning for top-notch service.</p>
+        </section>
+        <section id="trading-hours" class="animated-section">
+            <h2>Trading Hours</h2>
+            <ul>
+                <li>Mon - Fri: 8:00 AM - 6:00 PM</li>
+                <li>Sat: 8:00 AM - 5:00 PM</li>
+                <li>Sun: 9:00 AM - 4:00 PM</li>
+            </ul>
+        </section>
+        <section id="pickup-dropoff" class="animated-section">
+            <h2>Free Pickup and Drop Off Service</h2>
+            <p>Weeklyn Dry Cleaning offers a free pickup and drop-off service for your convenience. Please fill out the form below to schedule a pickup.</p>
+            <form>
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="contact">Contact Number:</label><br>
+                <input type="tel" id="contact" name="contact" required><br>
+                <label for="address">Address for Pickup:</label><br>
+                <input type="text" id="address" name="address" required><br>
+                <label for="date">Pickup Date:</label><br>
+                <input type="date" id="date" name="date" required><br>
+                <label for="time">Pickup Time:</label><br>
+                <input type="time" id="time" name="time" required><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div id="testimonial-container">
+                <p class="testimonial">"Great service and friendly staff!" - Sarah T.</p>
+                <p class="testimonial">"My wedding dress looks brand new again!" - Emily W.</p>
+                <p class="testimonial">"Reliable and quick. Highly recommend." - John P.</p>
+                <p class="testimonial">"Excellent alterations for my suits!" - Michael B.</p>
+                <p class="testimonial">"Always my go-to for rug cleaning." - Karen S.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Weeklyn Dry Cleaning</p>
+        <div id="map"></div>
+        <script src="map.js"></script>
+    </footer>
+</body>
+</html>
