@@ -10,30 +10,40 @@ header {
     background: #dfb363; /* Yellowish */
     color: #5a3817;
     text-align: center;
-    padding: 2em;
+    padding: 2em 1em; /* Adjust padding to balance layout */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 15px 15px;
     animation: fadeInDown 1s;
 }
 
 .animated-logo img {
-    width: 150px; /* Adjusted size */
+    width: 150px; /* Adjust size as needed */
     transition: transform 0.3s;
     animation: rotateIn 1s;
+    cursor: pointer; /* Indicate the logo is clickable */
 }
 
-header img:hover {
-    transform: scale(1.1);
+.animated-logo a:hover img {
+    transform: scale(1.1); /* Slight scale effect on hover */
 }
 
 .animated-title {
-    font-size: 2.5em; /* Adjusted font size */
-    font-family: 'Playfair Display', serif; /* Ensure the font is available */
+    font-size: 3em; /* Increase size for prominence */
+    font-family: 'Playfair Display', serif; /* Elegant serif font for titles */
+    color: #5a3817;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.6); /* Soft shadow for depth */
+    background: -webkit-linear-gradient(45deg, #fdf0d4, #dfb363); /* Gradient effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Chrome/Safari specific for gradient text */
+    margin-bottom: 0.5em; /* Space between title and subtitle */
     animation: fadeIn 2s;
 }
 
 .animated-subtitle {
-    font-size: 1.2em; /* Adjusted font size */
+    font-size: 1.5em; /* Slightly larger for readability */
+    font-family: 'Lato', sans-serif; /* Keep it simple and clean for subtitles */
+    color: #5a3817;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5); /* Subtle shadow for depth */
     animation: fadeInUp 2s;
 }
 
@@ -98,6 +108,10 @@ nav a:hover {
     color: #5a3817;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 main {
     margin: 2em;
     padding: 2em;
@@ -135,6 +149,33 @@ ul.services-list li:hover {
     transform: scale(1.05);
 }
 
+/* Trading Hours Styles */
+#trading-hours {
+    animation: fadeInUp 1.5s;
+    margin-top: 2em;
+    padding: 1em;
+    background: #f2c17f; /* Consistent with other sections for a unified look */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#trading-hours h2 {
+    color: #5a3817;
+    border-bottom: 2px solid #dfb363;
+    padding-bottom: 0.5em;
+}
+
+#trading-hours ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#trading-hours li {
+    margin: 0.5em 0;
+    color: #5a3817; /* Dark brown text for readability */
+    font-size: 1.1em;
+}
+
 #testimonials {
     margin-top: 2em;
     padding: 1em;
@@ -146,16 +187,19 @@ ul.services-list li:hover {
 
 #testimonial-container {
     position: relative;
-    height: 3em;
+    height: auto;
     overflow: hidden;
-    transition: opacity 1s;
 }
 
 .testimonial {
-    position: absolute;
-    width: 100%;
+    position: absolute; /* Position absolutely to stack on top of each other */
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0; /* Start with hidden for all but the first */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity changes */
     text-align: center;
-    opacity: 0;
+    margin-bottom: 1em;
 }
 
 #pickup-dropoff {
@@ -186,7 +230,76 @@ ul.services-list li:hover {
 #pickup-dropoff form input[type="submit"]:hover {
     background: #3f2913;
 }
+/* Team Member Styles */
+.animated-entry {
+    opacity: 0; /* Start invisible for the animation */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Ensure animation completes and stays visible */
+}
 
+.team-member {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Define a simple fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* You can also define animations for other elements like headers, logos, etc., similar to this */
+.animated-logo {
+    animation: fadeIn 1s ease-out;
+}
+
+.animated-title {
+    animation: fadeIn 1s ease-out;
+}
+
+.animated-subtitle {
+    animation: fadeIn 1s ease-out;
+}
+
+.animated-nav {
+    animation: fadeIn 1s ease-out;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 90px; /* Further reduced image size */
+    height: 90px; /* Maintain aspect ratio */
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover; /* Ensure images are cropped to fit the box without distortion */
+}
+
+.team-member h2 {
+    margin-top: 0;
+    margin-bottom: 5px; /* Ensures space between name and role */
+}
+
+.team-member p.role {
+    margin-top: 0;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em; /* Slightly smaller text for the role */
+}
+
+.team-member p {
+    margin: 0 0 10px; /* Adjusted paragraph margins for better spacing */
+    line-height: 1.5; /* Improves readability */
+}
+
+
+/* Footer Styles */
 footer {
     background: #5a3817;
     color: #dfb363;
@@ -196,17 +309,53 @@ footer {
     animation: fadeInUp 2s;
 }
 
-footer p {
-    margin: 0;
+footer a {
+    color: #dfb363; /* Set the color of links to match the footer text color */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+footer a:hover {
+    color: #ffffff; /* Lighter color on hover for better interaction feedback */
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+.footer-section h3 {
+    color: #dfb363;
+    margin-bottom: 0.5em;
+}
+
+.footer-section p {
+    margin: 0.2em 0;
+}
+
+.footer-bottom {
+    margin-top: 1em;
+    font-size: 0.8em;
+    color: #dfb363;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -263,20 +412,4 @@ footer p {
         transform: rotate(0);
         opacity: 1;
     }
-#trading-hours {
-    margin-top: 2em;
-    padding: 1em;
-    background: #f2c17f;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1.5s; /* Fading animation */
-}
-
-#trading-hours ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#trading-hours li {
-    margin: 0.5em 0;
 }
