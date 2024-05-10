@@ -7,26 +7,25 @@ body {
 }
 
 header {
-    background: #dfb363; /* Yellowish */
+    background: #ffffff; /* Yellowish */
     color: #5a3817;
     text-align: center;
     padding: 2em 1em; /* Adjust padding to balance layout */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 15px 15px;
-    animation: fadeInDown 1s;
+    transition: opacity 1s ease-in-out;
 }
 
 .animated-logo img {
-    width: 150px; /* Adjust size as needed */
+    width: 400px; /* Adjust size as needed */
+    height:auto;
     transition: transform 0.3s;
-    animation: rotateIn 1s;
+    animation: none;
     cursor: pointer; /* Indicate the logo is clickable */
 }
-
 .animated-logo a:hover img {
     transform: scale(1.1); /* Slight scale effect on hover */
 }
-
 .animated-title {
     font-size: 3em; /* Increase size for prominence */
     font-family: 'Playfair Display', serif; /* Elegant serif font for titles */
@@ -36,7 +35,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; /* Chrome/Safari specific for gradient text */
     margin-bottom: 0.5em; /* Space between title and subtitle */
-    animation: fadeIn 2s;
+    animation: fade 2s;
 }
 
 .animated-subtitle {
@@ -149,72 +148,9 @@ ul.services-list li:hover {
     transform: scale(1.05);
 }
 
-/* Trading Hours Styles */
-#trading-hours {
-    animation: fadeInUp 1.5s;
-    margin-top: 2em;
-    padding: 1em;
-    background: #f2c17f; /* Consistent with other sections for a unified look */
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-#trading-hours h2 {
-    color: #5a3817;
-    border-bottom: 2px solid #dfb363;
-    padding-bottom: 0.5em;
-}
-
-#trading-hours ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#trading-hours li {
-    margin: 0.5em 0;
-    color: #5a3817; /* Dark brown text for readability */
-    font-size: 1.1em;
-}
-
-#testimonials {
-    margin-top: 2em;
-    padding: 1em;
-    background: #f2c17f;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s;
-}
-
-#testimonial-container {
-    position: relative;
-    height: auto;
-    overflow: hidden;
-}
-
-.testimonial {
-    position: absolute; /* Position absolutely to stack on top of each other */
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: 0; /* Start with hidden for all but the first */
-    transition: opacity 1s ease-in-out; /* Smooth transition for opacity changes */
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-#pickup-dropoff {
-    animation: fadeInUp 1.5s;
-    margin-top: 2em;
-    padding: 1em;
-    background: #f2c17f;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 400px; /* Adjust the width */
-}
-
 #pickup-dropoff form input,
 #pickup-dropoff form textarea {
-    width: 100%;
+    width: 25%;
     margin-bottom: 1em;
 }
 
@@ -244,7 +180,6 @@ ul.services-list li:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
 }
-
 /* Define a simple fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -412,4 +347,40 @@ footer a:hover {
         transform: rotate(0);
         opacity: 1;
     }
+    
 }
+.faq-container {
+    margin: 20px 0;
+}
+.faq-item {
+    margin-bottom: 10px;
+}
+.faq-question {
+    background-color: #ffffff; /* Background color set to white to remove any shading */
+    border: none; /* Removes the border to eliminate the box around the question */
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-weight: bold; /* Makes the question text bolder */
+    font-size: 1.1em; /* Slightly larger font size for questions */
+}
+.faq-answer {
+    background-color: #ffffff;
+    border-left: 2px solid #ddd; /* You can remove this if you don't want any border */
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-weight: normal; /* Keeps the answer text in normal weight */
+    font-size: 1em; /* Standard font size for answers */
+}
+.faq-answer.active {
+    max-height: 300px; /* Adjust as needed */
+    padding: 10px 15px;
+}
+
+
+

@@ -12,10 +12,24 @@
     <div id="nav-placeholder"></div>
 
     <main>
-        <section>
+        <section class="team-member animated-entry">
             <h2>Get in Touch</h2>
             <p><a href="https://www.google.com/maps/search/?api=1&query=95+Eastern+Road+TURRAMURRA+NSW+2074" target="_blank">95 Eastern Road, Turramurra NSW 2074</a></p>
-            <p>Phone: 02 9489 3839</p>
+            <p><a href="tel:+61294893839">02 9489 3839</a></p>
+
+            <!-- Embed Google Map -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9JQhxHGAeKmoNLOgaovPU3Kcwyhorge4&q=95+Eastern+Road+TURRAMURRA+NSW+2074"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
             <form>
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br>
