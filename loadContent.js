@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     el.style.animation = '';
                 }, 10);
             });
+            // Initialize the image cycling after loading the header
+            initializeImageCycling();
         });
 
     // Load the navigation content and re-trigger animations
@@ -41,3 +43,27 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 });
+
+function initializeImageCycling() {
+    // Header image cycling functionality
+    const images = document.querySelectorAll('.header-images img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+        console.log('Current Index:', currentIndex); // Debugging: Log current index
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        console.log('Next Index:', currentIndex); // Debugging: Log next index
+        images[currentIndex].classList.add('active');
+    }
+
+    if (images.length > 0) {
+        // Debugging: log the number of images found
+        console.log(`Total images found: ${images.length}`);
+        images.forEach((img, index) => console.log(`Image ${index + 1} src: ${img.src}`));
+        
+        setInterval(showNextImage, 10000); // Change image every 10 seconds
+    } else {
+        console.error('No images found in the .header-images container.');
+    }
+}

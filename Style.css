@@ -5,27 +5,48 @@ body {
     color: #5a3817; /* Dark brown */
     margin: 0;
 }
-
 header {
-    background: #ffffff; /* Yellowish */
-    color: #5a3817;
-    text-align: center;
-    padding: 2em 1em; /* Adjust padding to balance layout */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 15px 15px;
-    transition: opacity 1s ease-in-out;
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ensure this is enough to show the header */
+    overflow: hidden;
+    background-color: #fff; /* Optional: Add a background color to make the header visible in case images fail to load */
+}
+
+/* Ensure the logo is always visible */
+.animated-logo {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    z-index: 100;
+    width: 100px;
 }
 
 .animated-logo img {
-    width: 400px; /* Adjust size as needed */
-    height:auto;
-    transition: transform 0.3s;
-    animation: none;
-    cursor: pointer; /* Indicate the logo is clickable */
+    width: auto;
+    height: 125px;
 }
+
+/* Style for the header images */
+.header-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Adding a transition for the fade effect */
+}
+
+.header-images img.active {
+    opacity: 1;
+}
+
 .animated-logo a:hover img {
     transform: scale(1.1); /* Slight scale effect on hover */
 }
+
 .animated-title {
     font-size: 3em; /* Increase size for prominence */
     font-family: 'Playfair Display', serif; /* Elegant serif font for titles */
@@ -50,7 +71,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
     text-align: center;
-    background-color: #5a3817;
+    background-color: rgb(90, 56, 23);
     margin: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     animation: fadeInLeft 1.5s;
@@ -187,9 +208,6 @@ ul.services-list li:hover {
 }
 
 /* You can also define animations for other elements like headers, logos, etc., similar to this */
-.animated-logo {
-    animation: fadeIn 1s ease-out;
-}
 
 .animated-title {
     animation: fadeIn 1s ease-out;
@@ -236,10 +254,10 @@ ul.services-list li:hover {
 
 /* Footer Styles */
 footer {
-    background: #5a3817;
-    color: #dfb363;
-    text-align: center;
-    padding: 1em;
+    background-color: rgb(255, 255, 255, 0.5); /* Change background to white */
+    color: #dfb363; /* Adjust text color for readability */
+    padding: 0;
+    position: relative;
     border-radius: 15px 15px 0 0;
     animation: fadeInUp 2s;
 }
@@ -254,33 +272,69 @@ footer a:hover {
     text-decoration: underline; /* Optional: adds underline on hover */
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 1em;
-}
-
 .footer-section h3 {
     color: #dfb363;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
 }
 
 .footer-section p {
-    margin: 0.2em 0;
+    margin: 0.5em 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between;
+    padding: 0px; /* Reduced padding */
+    max-width: 2000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Ensure content is above the background */
+}
+
+.footer-logo-left {
+    display: flex;
+    flex-direction: row; /* Stack logos vertically */
+    align-items: center;
+    margin-top: -10px; /* Add margin to space it out from the info */
+}
+
+.footer-logo-left img {
+    height: 100px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around; /* Evenly distribute space */
+    width: 100%;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.footer-section .ge-logo {
+    height: 80px; /* Height for GreenEarth logo */
+    margin-top: 25px; /* Adjust spacing */
+}
+
+.footer-section .weeklyn-logo {
+    height: 80px; /* Smaller height for Weeklyn logo */
+    margin-top: 0px; /* Space between the logos */
 }
 
 .footer-bottom {
-    margin-top: 1em;
-    font-size: 0.8em;
-    color: #dfb363;
+    background-color: rgb(255, 255, 255, 0.55); /* White background for the bottom section */
+    color: #dfb363; /* Adjust text color for readability */
+    text-align: center;
+    padding: 10px 0px;
+    position: relative;
+    z-index: 0; /* Ensure background is below the content */
+    margin-top: -75px; /* Overlap the footer bottom with the logos */
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
 
 /* Animations */
 @keyframes fadeIn {
