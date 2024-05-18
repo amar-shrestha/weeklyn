@@ -1,3 +1,101 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the bar div
+    var topBar = document.createElement('div');
+    topBar.style.position = 'fixed';
+    topBar.style.top = '1px';
+    topBar.style.left = '0';
+    topBar.style.width = '100%';
+    topBar.style.height = '90px'; // Adjust height as needed
+    topBar.style.backgroundColor = 'rgba(240, 240, 240, 0.9)'; // Set background with 0.5 opacity
+    topBar.style.zIndex = '1000'; // Ensure it's above other content
+    topBar.style.display = 'flex';
+    topBar.style.alignItems = 'center';
+    topBar.style.justifyContent = 'space-between'; // Distribute items evenly
+    topBar.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)'; // Optional shadow for depth
+    topBar.style.borderRadius = '10px'; // Add rounded corners
+
+    // Create the scrolling text on the left
+    var leftText = document.createElement('div');
+    leftText.style.width = '40%'; // Allocate space for scrolling text
+    leftText.style.overflow = 'hidden';
+    leftText.style.whiteSpace = 'nowrap';
+    leftText.style.textAlign = 'right'; // Right-align text on the left side
+
+    var leftContent = document.createElement('p');
+    leftContent.innerText = 'Exciting News: One More Store Opening Soon! Stay Tuned for Updates.';
+    leftContent.style.fontFamily = '"Lato", sans-serif'; // Example font
+    leftContent.style.color = '#5a3817'; // Example color
+    leftContent.style.fontSize = '18px'; // Example size
+    leftContent.style.margin = '0';
+    leftContent.style.animation = 'scrollLeft 20s linear infinite';
+
+    leftText.appendChild(leftContent);
+    topBar.appendChild(leftText);
+
+    // Create the logo link element
+    var logoLink = document.createElement('a');
+    logoLink.href = 'index.html'; // Adjust to point to your homepage URL
+    logoLink.style.textDecoration = 'none'; // Remove underline from the link
+    logoLink.style.flexGrow = '0'; // Prevent stretching
+
+    // Create the logo image element
+    var logoImage = document.createElement('img');
+    logoImage.src = 'logo.png'; // Path to your logo image
+    logoImage.alt = 'Weeklyn Dry Cleaning Logo';
+    logoImage.style.height = '95px'; // Adjust based on your logo size
+    logoImage.style.transition = 'transform 0.3s ease'; // Smooth transition for transform
+
+    // Apply hover effect using JavaScript
+    logoImage.onmouseover = function() {
+        logoImage.style.transform = 'scale(1.1)'; // Scale up on hover
+    };
+    logoImage.onmouseout = function() {
+        logoImage.style.transform = 'scale(1.0)'; // Scale back on mouse out
+    };
+
+    logoLink.appendChild(logoImage);
+    topBar.appendChild(logoLink);
+
+    // Create the scrolling text on the right
+    var rightText = document.createElement('div');
+    rightText.style.width = '40%'; // Allocate space for scrolling text
+    rightText.style.overflow = 'hidden';
+    rightText.style.whiteSpace = 'nowrap';
+    rightText.style.textAlign = 'left'; // Left-align text on the right side
+
+    var rightContent = document.createElement('p');
+    rightContent.innerText = 'Exciting News: One More Store Opening Soon! Stay Tuned for Updates.';
+    rightContent.style.fontFamily = '"lato", sans-serif'; // Example font
+    rightContent.style.color = '#5a3817'; // Example color
+    rightContent.style.fontSize = '18px'; // Example size
+    rightContent.style.margin = '0';
+    rightContent.style.animation = 'scrollRight 20s linear infinite';
+
+    rightText.appendChild(rightContent);
+    topBar.appendChild(rightText);
+
+    // Append the bar to the body of the page, making it the first element
+    document.body.insertBefore(topBar, document.body.firstChild);
+
+    // Style for scrolling animation
+    var styleSheet = document.createElement('style');
+    styleSheet.innerText = `
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes scrollRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+});
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     // Load the header content and re-trigger animations
     fetch('header.html')
