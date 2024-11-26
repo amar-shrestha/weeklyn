@@ -295,12 +295,13 @@ footer a:hover {
 
 .footer-section {
     flex: 1;
+    display: grdi;
     padding: 0 10px;
 }
 
 .footer-section .ge-logo {
     height: 80px; /* Height for GreenEarth logo */
-    margin-top: 25px; /* Adjust spacing */
+    margin-top: 10px; /* Adjust spacing */
 }
 
 .footer-section .weeklyn-logo {
