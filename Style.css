@@ -295,7 +295,7 @@ footer a:hover {
 
 .footer-section {
     flex: 1;
-    display: grdi;
+    display: grid;
     padding: 0 10px;
 }
 
@@ -316,7 +316,7 @@ footer a:hover {
     padding: 10px 0px;
     position: relative;
     z-index: 0; /* Ensure background is below the content */
-    margin-top: -45px; /* Overlap the footer bottom with the logos */
+    /*margin-top: -45px; /* Overlap the footer bottom with the logos */
 }
 
 
