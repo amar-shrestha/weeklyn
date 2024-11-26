@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     leftText.style.textAlign = 'right'; // Right-align text on the left side
 
     var leftContent = document.createElement('p');
-    leftContent.innerText = 'Exciting News: One More Store Opening Soon! Stay Tuned for Updates.';
+    leftContent.innerText = 'Exciting News: We are now open at 35 Redleaf Ave, Wahroonga NSW 2076.';
     leftContent.style.fontFamily = '"Lato", sans-serif'; // Example font
     leftContent.style.color = '#5a3817'; // Example color
     leftContent.style.fontSize = '18px'; // Example size
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     rightText.style.textAlign = 'left'; // Left-align text on the right side
 
     var rightContent = document.createElement('p');
-    rightContent.innerText = 'Exciting News: One More Store Opening Soon! Stay Tuned for Updates.';
+    rightContent.innerText = 'Exciting News: We are now open at 35 Redleaf Ave, Wahroonga NSW 2076.';
     rightContent.style.fontFamily = '"lato", sans-serif'; // Example font
     rightContent.style.color = '#5a3817'; // Example color
     rightContent.style.fontSize = '18px'; // Example size
